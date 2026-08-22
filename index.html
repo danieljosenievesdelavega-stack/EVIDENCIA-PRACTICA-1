@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor de Conversión</title>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora de Conversiones</h1>
+    
+    
+    <div class="module">
+        <h2>1. Módulo de Entrada de Datos</h2>
+        
+        <div class="form-group">
+            <label for="inputNumber">Número a procesar:</label>
+            <input type="text" id="inputNumber" placeholder="Ej. 255, FF, 1010">
+        </div>
+
+        <div class="grid-2">
+            
+            <div class="form-group">
+                <label for="inputBase">Base del número ingresado:</label>
+                <select id="inputBase">
+                    <option value="10">Decimal (Base 10)</option>
+                    <option value="2">Binario (Base 2)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="16">Hexadecimal (Base 16)</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="wordSize">Tamaño de Palabra (Arquitectura):</label>
+                <select id="wordSize">
+                    <option value="8">8 bits (Byte)</option>
+                    <option value="16">16 bits (Word)</option>
+                    <option value="32">32 bits (DWord)</option>
+                    <option value="64">64 bits (QWord)</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="btnConvertir">Ejecutar Conversión</button>
+        
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+   
+    <div class="module">
+        <h2>2. Panel de Registros (Salida Multibase)</h2>
+        
+        <div class="form-group">
+            <label for="outBin">Binario (Base 2):</label>
+            <input type="text" id="outBin" readonly placeholder="Esperando conversión...">
+        </div>
+        
+        <div class="form-group">
+            <label for="outOct">Octal (Base 8):</label>
+            <input type="text" id="outOct" readonly placeholder="Esperando conversión...">
+        </div>
+        
+        <div class="form-group">
+            <label for="outDec">Decimal (Base 10):</label>
+            <input type="text" id="outDec" readonly placeholder="Esperando conversión...">
+        </div>
+        
+        <div class="form-group">
+            <label for="outHex">Hexadecimal (Base 16):</label>
+            <input type="text" id="outHex" readonly placeholder="Esperando conversión...">
+        </div>
+    </div>
+    
+    <div class="module">
+        <h2>3. Capa ALU — Operaciones bit a bit</h2>
+
+        <div class="form-group">
+            <label for="aluA">Operando A (binario):</label>
+            <input type="text" id="aluA" placeholder="Ej. 1010">
+        </div>
+
+        <div class="form-group">
+            <label for="aluB">Operando B (binario):</label>
+            <input type="text" id="aluB" placeholder="Ej. 1100">
+        </div>
+
+        <div class="form-group">
+            <label for="aluOp">Operación:</label>
+            <select id="aluOp">
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+                <option value="XOR">XOR</option>
+            </select>
+        </div>
+
+        <button id="btnALU">Ejecutar ALU</button>
+
+        <div class="form-group">
+            <label for="aluOut">Resultado (binario):</label>
+            <input type="text" id="aluOut" readonly placeholder="Resultado...">
+        </div>
+
+        <div id="aluError" class="error-message"></div>
+    </div>
+    
+</div>
+
+<script src="conversor.js"></script>
+</body>
+</html>
